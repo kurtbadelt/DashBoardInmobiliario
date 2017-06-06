@@ -43,7 +43,7 @@ InmuebleSchema = new SimpleSchema({
     type: String,
     label: "Pais"
   },
-  precioDeCompra: {  
+  precioDeCompra: {
     type: Number,
     label: "Precio de Compra"
   },
@@ -73,7 +73,7 @@ InmuebleSchema = new SimpleSchema({
     type: Number,
     label: "Tipo de Pago",
     autoform: {
-       type: 'select-radio',
+       type: 'select',
        options: function (){return[{label:"Efectivo",value:1},{label:"Transferencia",value:2},{label:"Cheque",value:3},{label:"Deposito",value:4}]}
     }
   },
