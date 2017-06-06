@@ -48,12 +48,18 @@ InmuebleSchema = new SimpleSchema({
     label: "Precio de Compra"
   },
   metrosCuadradosTerreno:{
-    type: String,
-    label: "M2 Terreno"
+    type: Number,
+    label: "M2 Terreno",
+    autoform: {
+      type: 'number'
+    }
   },
   metrosCuadradosConstruccion:{
-    type: String,
-    label: "M2 Construcción"
+    type: Number,
+    label: "M2 Construcción",
+    autoform: {
+      type: 'number'
+    }
   },
   precioDeRenta:{
     type: String,
@@ -64,14 +70,23 @@ InmuebleSchema = new SimpleSchema({
     label: "Fecha de inicio de contrato"
   },
   tipoDePago:{
-    type: String,
-    label: "Tipo de Pago"
+    type: Number,
+    label: "Tipo de Pago",
+    autoform: {
+       type: 'select-radio',
+       options: function (){return[{label:"Efectivo",value:1},{label:"Transferencia",value:2},{label:"Cheque",value:3},{label:"Deposito",value:4}]}
+    }
   },
   disponible: {
     type: Boolean,
     label: "Inmueble disponible",
-    defaultValue: true,
-    optional: false,
+
+    autoform:{
+      type:'boolean-select',
+      trueLabel:'Disponible para renta',
+      falseLabel:'No disponible',
+      firstOption:'(Seleccione una respuesta)'
+    }
   },
   activoEnSistema: {
     type: Boolean,

@@ -47,20 +47,18 @@ ClienteSchema = new SimpleSchema({
     type: String,
     label: "Telefono"
   },
-  contactName:{
-    type: String,
-    label: "Nombre de Contacto"
-  },
-  email:{
-    type: String,
-    label: "eMail del Contacto"
-  },
   alCorriente: {
     type: Boolean,
-    label: "Al corriente en pagos",
-    defaultValue: true,
-    optional: false,
+    label: "¿Cliente al corriente?",
+
+    autoform:{
+      type:'boolean-select',
+      trueLabel:'Si',
+      falseLabel:'No',
+      firstOption:'(Seleccione una respuesta)'
+    }
   },
+
   activoEnSistema: {
     type: Boolean,
     label: "Activo en sistema",
@@ -89,9 +87,22 @@ ClienteSchema = new SimpleSchema({
     autoform:{
       type: "hidden"
     }
-  }
+  },
 
-});
+  contacts: {
+    type: Array,
+    optional: true
+  },
+  'contacts.$': {
+    type: Object
+  },
+  'contacts.$.Nombre': {
+    type: String
+  },
+  'contacts.$.email': {
+    type: String
+  }
+}, { tracker: Tracker });
 
 
 Meteor.methods({
