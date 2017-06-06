@@ -43,8 +43,8 @@ InmuebleSchema = new SimpleSchema({
     type: String,
     label: "Pais"
   },
-  precioDeCompra: {  //must find a way to make it double
-    type: String,
+  precioDeCompra: {  
+    type: Number,
     label: "Precio de Compra"
   },
   metrosCuadradosTerreno:{
@@ -62,7 +62,7 @@ InmuebleSchema = new SimpleSchema({
     }
   },
   precioDeRenta:{
-    type: String,
+    type: Number,
     label: "Precio de la renta"
   },
   fechaDePago:{
