@@ -91,6 +91,7 @@ ClienteSchema = new SimpleSchema({
 
   contacts: {
     type: Array,
+    label:"Contactos",
     optional: true
   },
   'contacts.$': {
