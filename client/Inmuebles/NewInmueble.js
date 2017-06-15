@@ -1,5 +1,5 @@
-//Template.NewRecipe.events({
-//  'click .fa-close': function(){
-//    Session.set('newInmueble',false);
-//  }
-//});
+Template.NewInmueble.events({
+  'click .fa-close': function(){
+    Session.set('inmuebleNuevo',false);
+  }
+});

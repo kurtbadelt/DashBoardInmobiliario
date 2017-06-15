@@ -1,0 +1,25 @@
+<template name="Inmueble">
+  <article class="recipe {{#if disponible}}in-menu{{/if}}">
+    <h3>{{name}}</h3>
+
+    {{#if editMode}}
+    {{> quickForm collection="Inmuebles" id=updateInmueble type="update" doc=this autosave=true}}
+    {{else}}
+    <p>{{description}}</p>
+
+    {{#if disponible}}
+    <button class="btn-deny toggle-menu">Inmueble Ocupado</button>
+    {{else}}
+    <button class="btn-primary toggle-menu">Inmueble Disponible</button>
+    {{/if}}
+    {{/if}}
+
+    <a href="/recipe/{{_id}}">Ver Más</a>
+    <i class="fa fa-pencil"></i>
+    <i class="fa fa-trash"></i>
+
+
+
+
+  </article>
+</template>

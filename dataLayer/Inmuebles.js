@@ -13,7 +13,7 @@ Inmuebles.allow({
 InmuebleSchema = new SimpleSchema({
   name: {
     type: String,
-    label: "Nombre"
+    label: "Nombre del Inmueble"
   },
   description: {
     type: String,
@@ -127,6 +127,13 @@ Meteor.methods({
     Inmuebles.update(id,{
       $set:{
         activoEnSistema: !currentState
+      }
+    });
+  },
+  toggleImuebleDisponible_Inmuebles: function(id, currentState){
+    Inmuebles.update(id,{
+      $set:{
+        disponible: !currentState
       }
     });
   },
